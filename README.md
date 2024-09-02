@@ -2,20 +2,24 @@
 for sih
 
 
-pip install django
+1. git clone https://github.com/tamal9991/SIH_1642.git
 
-pip install google-generativeai
+2. pip install django
 
-
-cd SIH_1642
-
-python manage.py makemigrations
-
-python manage.py migrate
+3. pip install google-generativeai
 
 
-python manage.py runserver
+4. cd SIH_1642
 
+5. python manage.py makemigrations
+
+6. python manage.py migrate
+
+
+7. python manage.py runserver
+
+//
 fix setting email address
 
 add email and app password
+//
