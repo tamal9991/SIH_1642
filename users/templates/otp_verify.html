@@ -1,0 +1,50 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Verification</title>
+    <link rel="stylesheet" href="{% static 'css/otp_verify.css' %}"> <!-- Link to CSS file -->
+</head>
+<body>
+
+    <form action="" method="post">
+        {% csrf_token %}
+        
+        <input type="hidden" name="email" id="email">
+        <input type="hidden" name="first_name" id="first_name">
+        <input type="hidden" name="last_name" id="last_name">
+        <input type="hidden" name="password" id="password">
+        <input type="hidden" name="username" id="username">
+        <div class="otp-container">
+            <h2>Enter OTP</h2>
+            <input type="text" id="otp" name="otp" placeholder="Enter your OTP">
+            <button type="submit">Verify OTP</button>
+            <div class="message" id="message"></div>
+        </div>
+    </form>
+
+ 
+ <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<script>
+    $(document).ready(function() {
+            // Get the "user_info" cookie
+            var userInfo = $.cookie('user_info');
+
+            // If the cookie exists, parse the JSON data and display it
+            if (userInfo) {
+                var userData = JSON.parse(userInfo);
+                $('#username').val(userData['username']);
+                $('#first_name').val(userData['first_name']);
+                $('#password').val(userData['password']);
+                $('#last_name').val(userData['last_name']);
+                $('#email').val(userData['email']);
+            } else {
+                $('#userInfo').text("No user data found.");
+            }
+        });
+</script>
+</body>
+</html>

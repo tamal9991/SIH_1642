@@ -1,0 +1,55 @@
+body{
+    background-image: url('/static/images/otp_back.jpeg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+}
+.contact-us {
+    text-align: center;
+    padding: 50px;
+}
+
+.contact-us h1 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+input {
+    font-family: monospace;
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+textarea{
+    width: 100%;
+    height: 40vh;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+.submit-button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #0f6f26;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: monospace;
+    
+}
+
+.submit-button:hover {
+    background-color: #218838;
+}

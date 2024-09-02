@@ -1,0 +1,31 @@
+{% extends 'home.html' %} 
+{% load static %}
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayush Start-up Portal</title>
+    <link rel="stylesheet" href="{% static 'css/domain_form_stack.css' %}">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="{% static 'images/gov.jpeg' %}" alt="Logo">
+            <h1>
+                <span style="font-size: 35px;">Ayush</span><br>
+                <span style="font-size: 35px;">Start-up Portal</span>
+              </h1>
+        </div>
+        <div class="buttons">
+            <button onclick="navigateTo('/domain')">DOMAIN</button>
+            <button onclick="navigateTo('/forms')">FORUM</button>
+            <button onclick="navigateTo('/stack')">STAKES</button>
+        </div>
+    </div>
+
+    <script src="{% static 'js/domain_form_stack.js' %}"></script>
+</body>
+</html>
+{% endblock  %}

@@ -1,0 +1,126 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f3f4f6;
+    margin: 0;
+    padding: 0;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0a8f08;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+.portal-title, .page-title {
+    margin: 0;
+    font-weight: bold;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.profile-button, .menu-button {
+    background-color: #0a8f08;
+    border: none;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.menu-dropdown {
+    display: none;
+    position: absolute;
+    right: 20px;
+    background-color: #0a8f08;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.menu-dropdown a {
+    display: block;
+    color: white;
+    padding: 5px 0;
+    text-decoration: none;
+}
+
+.stakes-section {
+    background-color: white;
+    margin: 30px auto;
+    padding: 30px;
+    max-width: 500px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.search-container {
+    display: flex;
+    margin-bottom: 20px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #0a8f08;
+    border-radius: 8px 0 0 8px;
+    font-size: 16px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    background-color: #0a8f08;
+    border: none;
+    color: white;
+    border-radius: 0 8px 8px 0;
+    cursor: pointer;
+}
+
+.stake-info {
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+.stake-info p {
+    margin: 10px 0;
+    color: #333;
+}
+
+.buy-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #0a8f08;
+    border: none;
+    color: white;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.buy-button:hover {
+    background-color: #087d06;
+}
+
+.container-fluid{
+    height: 140vh;
+}

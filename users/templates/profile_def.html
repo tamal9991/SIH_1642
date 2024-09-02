@@ -1,0 +1,64 @@
+{% extends 'home.html' %} 
+{% load static %}
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile Page</title>
+    <link rel="stylesheet" href="{% static 'css/profile_def.css' %}">
+</head>
+<body>
+    <div class="contailer">
+
+    
+    <div class="profile-container">
+        <div class="profile-card">
+            <div class="profile-image">
+                <img src="{% static 'images/head1.jpeg' %}" alt="Student Image">
+            </div>
+            
+            
+            <div class="profile-details">
+                <h2 class="student-name">{{userDetails.username}}</h2>
+                
+            </div>
+            
+        </div>
+
+        <div class="info-container">
+            <div class="general-info">
+                <h3>General Information</h3>
+                <table>
+                    <tr>
+                        <td>Email</td>
+                        <td>{{userDetails.email}}</td>
+                    </tr>
+                    <tr>
+                        <td>Contact No</td>
+                        <td>2020</td>
+                    </tr>
+                    <tr>
+                        <td>Gender</td>
+                        <td>Male</td>
+                    </tr>
+                    <tr>
+                        <td>Location</td>
+                        <td>Group</td>
+                    </tr>
+                    
+                </table>
+            </div>
+
+            <div class="other-info">
+                <h3>Other Information</h3>
+                <p>Details....</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script src="{% static 'js/profile_def.js' %}"></script>
+</body>
+</html>
+{% endblock %}

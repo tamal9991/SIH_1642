@@ -1,0 +1,154 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oakberry Real Estate</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Nunito+Sans:300,400,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
+    <link rel="stylesheet" href="{% static 'css/chart_bot.css' %}">
+  </head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="top-bar" style="display: none;">
+            <div class="contact-info">
+                <span>Free Call: +1 234 456 78910</span>
+                <span>Our Location: Suite 721 New York NY 10016</span>
+            </div>
+            <div class="social-links">
+                <a href="#">Facebook</a>
+                <a href="#">Twitter</a>
+                <a href="#">Dribbble</a>
+            </div>
+        </div>
+        <nav class="navbar">
+            <div class="logo">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRg_iJUajtQMR6w_jl_rhLtkF3W6OdBHPitAA&s" style="width: 40px; height: auto;" alt="">
+            </div>
+            <ul class="nav-links">
+                <li><a class="MMCC" href="/">Home</a></li>
+                <li><a class="MMCC" href="/aboutus">About</a></li>
+                <li><a class="MMCC" href="/feedback">Feedback</a></li>
+                
+                <li><a class="MMCC" href="/contect">Contact</a></li>
+            </ul>
+            {% if user.is_authenticated %}
+            <div class="dropdown">
+              <button class="dropbtn"><img class="profile_image" src="{% static 'images/head1.jpeg' %}" alt=""></button>
+              <div class="dropdown-content">
+                  <button class="dropdown-item" id="view-profile" onclick="navigate('/profile')">View Profile</button>
+                  <button class="dropdown-item" id="edit-profile" onclick="redirectDFS()">Forms</button>
+                  <button class="dropdown-item" id="settings">Settings</button>
+                  <button class="dropdown-item" id="logout" onclick="LogoutIndex()">Logout</button>
+              </div>
+          </div>
+      
+            {% else %}
+            <div>
+                <button class="submit-property" onclick="redirectToRes()" >SIGN UP</button>
+                <button class="submit-property" onclick="redirectToPage()" >LOG IN</button>
+            </div>
+            {% endif %}
+        </nav>
+    </header>
+    {% block header %}
+    <!-- Hero Section -->
+    <section class="hero" style="position: relative; overflow: hidden;">
+        <img src="{% static 'images/home_back.png' %}" alt="Modern House Image" style="width: 100%; height: auto; object-fit: cover;">
+        <div class="hero-content" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; color: white;">
+            <h1 style="color:black;">Welcome to the AYUSH Startup Registration Portal.</h1>
+            <p style="color:black;">This portal help AYUSH Startups to register efficiently and transparently</p>
+            <button class="learn-more" onclick="navigate('/aboutus')">Learn More...</button>
+        </div>
+    </section>
+    
+    
+
+    
+    
+<div class="content">
+    <h1 class="heading">AYUSH Services.</h1>
+    <p class="description"></p><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top1.jpeg)">
+
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Ayurveda is the time tested traditional system of medicine of India. The term 'Ayurveda' meaning 'the knowledge of life' comprises of two Sanskrit words viz 'Ayu' meaning 'Life' and 'Veda' meaning 'Knowledge' or 'Science'.</p>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top2.jpeg)">
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Yoga combines physical, breathing, and meditative practices for well-being, while naturopathy uses natural remedies and lifestyle changes to enhance the body's self-healing.</p>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top3.jpeg)">
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Unani medicine is a traditional system of healing based on the balance of bodily humors and natural remedies. It emphasizes holistic treatment through diet, herbs, and lifestyle adjustments.</p>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top4.jpeg)">
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Siddha is an ancient South Indian medical system emphasizing holistic health through the balance of elemental forces, using herbs, minerals, and lifestyle practices. It focuses on both physical and spiritual well-being.</p>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top5.jpeg)">
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Sowa Rigpa is a traditional Tibetan system of medicine that integrates herbal remedies, dietary guidelines, and lifestyle practices to balance the body's energies and promote health. It emphasizes a holistic approach to healing and well-being.</p>
+        </div>
+      </div></a><a class="card" href="#!">
+      <div class="front" style="background-image: url(/static/images/top6.jpeg)">
+        
+      </div>
+      <div class="back">
+        <div>
+          <p>Homeopathy is a system of medicine that uses highly diluted substances to stimulate the body’s natural healing processes. It focuses on treating the whole person rather than just symptoms.</p>
+        </div>
+      </div></a>
+  </div>
+  
+  {% endblock %}
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <div class="chatbot-container">
+    <div class="chat-header">
+        <h4>AYUSH Assistant</h4>
+        <button id="chat-toggle" >chat</button>
+    </div>
+    <div class="chat-body" id="chat-body">
+        <div class="chat-content" id="chat-content">
+            <!-- Chat messages will be displayed here -->
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type your message...">
+            <button id="send-button">Send</button>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Ministry of AYUSH.</p>
+    </footer>
+
+    <script src="{% static 'js/home.js' %}"></script>
+    <script src="{% static 'js/chart_bot.js' %}"></script>
+</body>
+</html>

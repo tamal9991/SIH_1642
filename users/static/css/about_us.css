@@ -1,0 +1,20 @@
+.contailer {
+    
+    justify-content: center;
+    flex-direction: column;
+    height: 55vh; 
+    margin-top: 20vh ;
+    text-align: center;
+    margin-left: 150px;
+    margin-right: 150px;
+    padding: 20px;
+}
+p{
+    font-size: 20px;
+}
+body{
+    background-image: url('/static/images/otp_back.jpeg');
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-size: cover; /* Ensures the image covers the entire background */
+    background-position: center; /* Centers the background image */
+}

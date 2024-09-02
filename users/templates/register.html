@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayurvedic Website Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/registration.css' %}">
+</head>
+<body>
+    <form action="" method="post">
+    {% csrf_token %}
+    <div class="container">
+        <h1>Register for AYUSH Startup</h1>
+        <form action="/submit" method="post">
+            <div class="input-group flex">
+                <input type="text" name="first_name" id="first-name" placeholder="First Name" required>
+            </div>
+            <div class="input-group">
+            <input type="text" name="last_name" id="last-name" placeholder="Last Name" required>
+            </div>
+            <div class="input-group">
+                <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+            
+            <div class="input-group">
+                 <input type="text" id="username" name="username" placeholder="Username" required>
+            </div>
+            <div class="input-group">
+            <input type="password" id="password" name="password1" placeholder="Password" required>
+            </div>
+            
+            <button type="submit" id="submitRegistration">Register</button>
+            
+        </form> 
+    </div>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+    <script src="{% static 'js/register.js' %}"></script>
+</form>
+</body>
+</html>

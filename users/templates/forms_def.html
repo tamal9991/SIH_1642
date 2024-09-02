@@ -1,0 +1,43 @@
+{% extends 'home.html' %} 
+{% load static %}
+{% block header %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AYUSH Startup Portal - Discussion Forum</title>
+    <link rel="stylesheet" href="{% static 'css/domain_def.css' %}">
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="container">
+            <form class="domain-form" action="" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value="MmrspjvF87dmhbs9cT2obENOdl6dcTcTZFVRiubwmeakSofUSMv4G2ljDyIbw3DI">
+                <div class="header">
+                    <img src="/static/images/gov.jpeg" alt="Logo">
+                    <h1>Ayush<br>Start-up Portal</h1>
+                </div>
+                <h2 class="page-title">FORUM</h2>
+                <label for="organization-name">Ask Question</label>
+                <input type="text" id="organization-name" name="ask_question" required="">
+                
+                <label for="startup-idea">Collaboration</label>
+                <input type="text" id="startup-idea" name="Collaboration" required="">
+                
+                <label for="contact-no">Problem Solving</label>
+                <input type="tel" id="contact-no" name="problem" required="">
+                <label for="location">Resources Sharing</label>
+                <input type="text" id="location" name="resources" required="">
+                
+                
+                <button type="submit" class="submit-button">SUBMIT</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="{% static 'js/forms_def.js' %}"></script>
+</body>
+</html>
+{% endblock %}

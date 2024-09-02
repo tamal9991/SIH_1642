@@ -1,0 +1,55 @@
+{% extends 'home.html' %} 
+{% load static %}
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback - AYUSH Startup Portal</title>
+    <link rel="stylesheet" href="{% static 'css/feed_back.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Feedback</h1>
+        <p>Your feedback is valuable to us. Please fill out the form below:</p>
+        <form id="feedback-form" action="" method="post" onsubmit="submitFeedback(event)">
+            {% csrf_token %}
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+            <label for="feedback">Feedback</label>
+            <textarea id="feedback" name="feedback" rows="5" required></textarea>
+            <label for="rating">Rating</label>
+            <div class="star-rating">
+                <input type="radio" id="star5" name="rating" value="5" required="">
+                <label for="star5" title="Excellent">&#9733;</label>
+            
+                <input type="radio" id="star4" name="rating" value="4">
+                <label for="star4" title="Very Good">&#9733;</label>
+            
+                <input type="radio" id="star3" name="rating" value="3">
+                <label for="star3" title="Good">&#9733;</label>
+            
+                <input type="radio" id="star2" name="rating" value="2">
+                <label for="star2" title="Fair">&#9733;</label>
+            
+                <input type="radio" id="star1" name="rating" value="1">
+                <label for="star1" title="Poor">&#9733;</label>
+            
+                <input type="radio" id="star0" name="rating" value="0">
+                <label for="star0" title="Very Poor">&#9733;</label>
+            </div>
+
+            
+
+            <button type="submit" class="submit-button">Submit Feedback</button>
+        </form>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
+{% endblock %}

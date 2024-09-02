@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Registration Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="{% static 'css/org_details.css' %}">
+</head>
+<body>
+    <div class="container">
+        <h1>Startup Registration Form</h1>
+        <form id="registrationForm">
+            <label for="companyName">Company Name<span class="required">*</span></label>
+            <input type="text" id="companyName" name="companyName" required>
+
+            <label for="owner">Owner<span class="required">*</span></label>
+            <input type="text" id="owner" name="owner" required>
+
+           
+
+            <label for="email">Business Email<span class="required">*</span></label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phoneNumber">Phone Number<span class="required">*</span></label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" pattern="[0-9]{3} [0-9]{3} [0-9]{4}" placeholder="### ### ####" required>
+
+            <label for="nominalCapital">Nominal Capital</label>
+            <input type="number" id="nominalCapital" name="nominalCapital">
+
+            <label for="industry">Industry<span class="required">*</span></label>
+            <select id="industry" name="industry" required>
+                <option value="" disabled selected>Please Select</option>
+                <option value="Technology">Technology</option>
+                <option value="Healthcare">Healthcare</option>
+                <option value="Finance">Finance</option>
+                <!-- Add more industries as needed -->
+            </select>
+            <label for="nominalCapital">Upload Id<span class="required">*</span></label>
+            <input type="file" id="upload_file" name="upload_file">
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div id="confirmationMessage" class="hidden">
+            <p>Thank you for registering your startup!</p>
+        </div>
+    </div>
+    <script src="{% static 'js/org_details.js' %}"></script>
+</body>
+</html>
